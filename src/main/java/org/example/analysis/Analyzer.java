@@ -28,13 +28,13 @@ public class Analyzer {
             vvoToTlvTickets.sort(Comparator.comparingInt(ticket -> (int) ticket.getPrice()));
 
             if (vvoToTlvTickets.size() % 2 == 0) {
-                int position = tickets.size() / 2;
+                int position = vvoToTlvTickets.size() / 2;
 
-                median = (double) (tickets.get(position - 1).getPrice() + tickets.get(position).getPrice()) / 2;
+                median = (double) (vvoToTlvTickets.get(position - 1).getPrice() + vvoToTlvTickets.get(position).getPrice()) / 2;
             } else {
-                int position = (int) Math.ceil(tickets.size() / 2.0);
+                int position = (int) Math.ceil(vvoToTlvTickets.size() / 2.0);
 
-                median = (double) tickets.get(position - 1).getPrice();
+                median = (double) vvoToTlvTickets.get(position - 1).getPrice();
             }
 
             return average - median;
